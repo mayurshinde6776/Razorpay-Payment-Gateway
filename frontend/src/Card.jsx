@@ -6,7 +6,7 @@ const Card=({amount , img, checkOutHandler })=> {
         <div>
             <VStack >
                 <Image src={img} boxSize={"64"} objectFit='cover' />
-                <Text>{amount}</Text>
+                <Text>$ {amount}</Text>
                 <Button onClick={()=>checkOutHandler(amount)} >Buy Now</Button>
             </VStack>
         </div>

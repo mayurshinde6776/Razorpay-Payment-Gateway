@@ -4,6 +4,8 @@ import Card from './Card';
 import axios from 'axios';
 const Home = () => {
 
+
+    //this checkOutHandler is called when clicked on Buy Now button
     const checkOutHandler = async (amount) => {
 
         const { data: { key } } = await axios.get("http://localhost:4000/api/getKey")
@@ -12,7 +14,7 @@ const Home = () => {
             amount
         })
        
-
+// created options for razorpay instance we will give all these options to razorpay api
         var options = {
             key,
             amount: order.amount,
@@ -21,7 +23,7 @@ const Home = () => {
             description: "Test Transaction",
             image: "https://avatars.githubusercontent.com/u/114060054?v=4",
             order_id: order.id,
-            callback_url: "http://localhost:4000/api/paymentverification",
+            callback_url: "http://localhost:4000/api/paymentverification", // after payemnt done this url is called
             prefill: {
                 name: "Gaurav Kumar",
                 email: "gaurav.kumar@example.com",
@@ -35,7 +37,7 @@ const Home = () => {
             }
         };
 
-
+// It will open pop up window  with options to do payment
         const razor = new window.Razorpay(options);
 
         razor.open();
