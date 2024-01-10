@@ -5,14 +5,15 @@ import { useSearchParams } from 'react-router-dom';
 const PaymentSuccess=()=> {
 
     const searchQuery= useSearchParams()[0]
+    const referenceNum= searchQuery.get("reference")
     return (
        <Box>
         <VStack h="100" justifyContent={"center"}>
 
-<Heading textTransform={"uppercase"}>order cuccessfull</Heading>
+<Heading textTransform={"uppercase"}>Order Successfull</Heading>
        
        <Text>
-        Referenec No: 564567
+        Referenec No: {referenceNum}
        </Text>
         </VStack>
        </Box>
