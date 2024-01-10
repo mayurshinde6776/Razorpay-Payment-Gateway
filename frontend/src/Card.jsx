@@ -4,10 +4,10 @@ import React from 'react';
 const Card=({amount , img, checkOutHandler })=> {
     return (
         <div>
-            <VStack>
-                <Image src={img}/>
+            <VStack >
+                <Image src={img} boxSize={"64"} objectFit='cover' />
                 <Text>{amount}</Text>
-                <Button onClick={checkOutHandler} >Buy Now</Button>
+                <Button onClick={()=>checkOutHandler(amount)} >Buy Now</Button>
             </VStack>
         </div>
     );
